@@ -1,8 +1,9 @@
 from django.contrib import admin
 from django.urls import path
-from django.views.generic import TemplateView
+from bookapp.views import book_cover
 
 urlpatterns = [
+    path('', book_cover, name='book-cover'),
     path('admin/', admin.site.urls),
-    path('book/', TemplateView.as_view(template_name="book.html"), name='book-cover'),
+    path('book/', book_cover),
 ]
